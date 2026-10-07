@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #24152f;
+  --plum: #4b1d56;
+  --violet: #7d4c9d;
+  --lilac: #eee5f2;
+  --mauve: #d8bfdc;
+  --cream: #fbf8f3;
+  --gold: #d8a64d;
+  --line: rgba(36, 21, 47, .16);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+.shell { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+.utility-bar { background: var(--ink); color: #f8f1fa; display: flex; justify-content: space-between; padding: 8px max(24px, calc((100% - 1180px) / 2)); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.utility-bar p { margin: 0; }
+.header-main { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 32px; padding-block: 26px; }
+.brand { color: var(--plum); font-family: Georgia, serif; font-size: 30px; font-weight: bold; letter-spacing: -.04em; white-space: nowrap; }
+.brand span { color: var(--violet); font-style: italic; font-weight: normal; }
+.search { display: flex; border-bottom: 1px solid var(--ink); max-width: 270px; }
+.search label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+.search input { background: transparent; border: 0; outline: 0; padding: 8px 0; width: 100%; color: var(--ink); }
+.search button { border: 0; background: transparent; cursor: pointer; font-size: 22px; padding: 0 4px; }
+.header-actions { display: flex; justify-content: end; gap: 22px; font-size: 11px; text-align: center; text-transform: uppercase; letter-spacing: .06em; }
+.header-actions a { display: grid; gap: 2px; }
+.action-icon { font-size: 24px; line-height: 1; color: var(--violet); }
+.main-nav { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; justify-content: center; gap: 54px; padding-block: 15px; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: .12em; }
+.main-nav a:hover, .product-card a:hover { color: var(--violet); }
+.hero { background: var(--plum); color: #fff; display: grid; grid-template-columns: 45% 55%; min-height: 490px; overflow: hidden; }
+.hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 64px; position: relative; z-index: 1; }
+.eyebrow { color: var(--gold); font-size: 11px; font-weight: bold; letter-spacing: .18em; margin: 0 0 18px; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-family: Georgia, serif; font-size: clamp(42px, 5vw, 70px); font-weight: normal; letter-spacing: -.045em; line-height: .98; margin-bottom: 34px; }
+h2 { font-family: Georgia, serif; font-size: clamp(32px, 4vw, 48px); font-weight: normal; letter-spacing: -.04em; line-height: 1.05; margin-bottom: 0; }
+.button { align-items: center; display: inline-flex; font-size: 12px; font-weight: bold; gap: 24px; justify-content: space-between; letter-spacing: .1em; padding: 14px 18px; text-transform: uppercase; width: 210px; }
+.button-light { background: #fff; color: var(--plum); }
+.hero-image { min-height: 490px; position: relative; }
+.hero-image img { height: 100%; object-fit: cover; width: 100%; }
+.image-note { background: rgba(36, 21, 47, .82); bottom: 22px; color: #fff; font-size: 11px; left: 22px; padding: 7px 11px; position: absolute; }
+.quick-access { display: grid; grid-template-columns: repeat(3, 1fr); margin-block: 54px 105px; }
+.quick-access a { align-items: center; border-right: 1px solid var(--line); display: grid; grid-template-columns: 44px 1fr 20px; padding: 16px 30px; font-family: Georgia, serif; font-size: 18px; }
+.quick-access a:first-child { padding-left: 0; }
+.quick-access a:last-child { border: 0; }
+.quick-symbol { color: var(--violet); font: bold 11px "Trebuchet MS", sans-serif; letter-spacing: .1em; }
+.section-heading { margin-bottom: 38px; }
+.categories { padding-bottom: 110px; }
+.category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.category { min-height: 290px; padding: 26px; display: flex; flex-direction: column; justify-content: space-between; color: #fff; background: var(--violet); }
+.category-perfumes { background: #60366d; }
+.category-bebidas { background: #9272a3; }
+.category-mercearia { background: #aa6681; }
+.category span { font-size: 12px; }
+.category strong { font: normal clamp(27px, 3vw, 38px) Georgia, serif; }
+.category em { font-size: 11px; font-style: normal; letter-spacing: .11em; text-transform: uppercase; }
+.category b { font-size: 20px; margin-left: 12px; }
+.products { background: var(--lilac); padding-block: 82px 100px; }
+.products-heading { align-items: end; display: flex; justify-content: space-between; }
+.pending-label { color: var(--plum); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.product-card { border-top: 1px solid var(--ink); padding-top: 13px; }
+.product-image { aspect-ratio: 1 / .92; background: #e0d5e2; margin-bottom: 20px; overflow: hidden; }
+.product-image img { height: 100%; object-fit: cover; width: 100%; }
+.product-category { color: var(--violet); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.product-card h3 { font: normal 25px Georgia, serif; margin-bottom: 4px; }
+.product-price { font-size: 13px; margin-bottom: 18px; }
+.product-card a { border-top: 1px solid var(--line); display: flex; font-size: 11px; font-weight: bold; justify-content: space-between; letter-spacing: .1em; padding-top: 12px; text-transform: uppercase; }
+.reviews { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 38px; padding-block: 105px; }
+.review-intro p:last-child { font-size: 14px; max-width: 230px; }
+blockquote { border-left: 1px solid var(--violet); margin: 0; padding: 0 0 0 25px; }
+.quote-mark { color: var(--violet); font: 52px Georgia, serif; line-height: .6; }
+blockquote p { font: 20px Georgia, serif; margin: 20px 0 24px; }
+blockquote footer { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.site-footer { background: var(--ink); color: #fff; padding-top: 64px; }
+.footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 60px; padding-bottom: 60px; }
+.brand-footer { color: #fff; display: inline-block; margin-bottom: 20px; }
+.brand-footer span { color: var(--mauve); }
+.footer-grid p, .footer-grid address { color: #d8cddc; font-size: 13px; font-style: normal; max-width: 260px; }
+.footer-grid h2 { color: var(--gold); font-family: "Trebuchet MS", sans-serif; font-size: 11px; font-weight: bold; letter-spacing: .14em; margin-bottom: 18px; text-transform: uppercase; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.2); color: #cfc4d5; display: flex; font-size: 10px; justify-content: space-between; letter-spacing: .1em; padding-block: 18px; text-transform: uppercase; }
+
+@media (max-width: 700px) {
+  .shell { width: min(100% - 32px, 1180px); }
+  .utility-bar { padding-inline: 16px; }
+  .utility-bar p:last-child { display: none; }
+  .header-main { grid-template-columns: 1fr auto; gap: 20px; padding-block: 20px; }
+  .brand { grid-column: 1 / -1; grid-row: 1; justify-self: center; }
+  .search { grid-column: 1; grid-row: 2; max-width: none; }
+  .header-actions { grid-column: 2; grid-row: 2; gap: 9px; }
+  .header-actions a span:last-child { font-size: 9px; }
+  .action-icon { font-size: 20px; }
+  .main-nav { gap: 15px; justify-content: space-between; overflow: auto; white-space: nowrap; }
+  .main-nav a { font-size: 10px; }
+  .hero { display: flex; flex-direction: column; min-height: 0; }
+  .hero-copy { padding: 48px 28px 42px; }
+  h1 { font-size: 45px; }
+  .hero-image { min-height: 270px; }
+  .quick-access { margin-block: 32px 72px; }
+  .quick-access a { font-size: 14px; grid-template-columns: 1fr 15px; padding: 12px 10px; }
+  .quick-access a:first-child { padding-left: 0; }
+  .quick-symbol { display: none; }
+  .categories { padding-bottom: 72px; }
+  .category-grid, .product-grid { grid-template-columns: 1fr; }
+  .category { min-height: 180px; }
+  .products { padding-block: 60px 72px; }
+  .products-heading { align-items: start; flex-direction: column; gap: 20px; }
+  .reviews { grid-template-columns: 1fr; gap: 38px; padding-block: 72px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
+  .footer-bottom { align-items: start; flex-direction: column; gap: 8px; }
+}
