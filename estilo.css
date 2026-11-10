@@ -92,6 +92,24 @@ blockquote footer { font-size: 11px; letter-spacing: .08em; text-transform: uppe
 .footer-grid h2 { color: var(--gold); font-family: "Trebuchet MS", sans-serif; font-size: 11px; font-weight: bold; letter-spacing: .14em; margin-bottom: 18px; text-transform: uppercase; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.2); color: #cfc4d5; display: flex; font-size: 10px; justify-content: space-between; letter-spacing: .1em; padding-block: 18px; text-transform: uppercase; }
 
+.age-gate {
+  background: var(--cream);
+  border: 1px solid var(--mauve);
+  border-radius: 4px;
+  color: var(--ink);
+  max-width: calc(100% - 32px);
+  padding: 38px;
+  width: 480px;
+}
+.age-gate::backdrop { background: rgba(36, 21, 47, .78); }
+.age-gate h2 { font-size: clamp(30px, 5vw, 40px); margin-bottom: 16px; }
+.age-gate > p:not(.eyebrow) { color: #594c5e; font-size: 14px; }
+.age-gate-actions { display: grid; gap: 12px; margin-top: 26px; }
+.age-gate-actions button { border: 1px solid var(--plum); cursor: pointer; font-size: 12px; font-weight: bold; letter-spacing: .04em; padding: 14px 16px; }
+.age-gate-confirm { background: var(--plum); color: #fff; }
+.age-gate-decline { background: transparent; color: var(--plum); }
+.age-gate-actions button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
 @media (max-width: 700px) {
   .shell { width: min(100% - 32px, 1180px); }
   .utility-bar { padding-inline: 16px; }
@@ -120,4 +138,5 @@ blockquote footer { font-size: 11px; letter-spacing: .08em; text-transform: uppe
   .reviews { grid-template-columns: 1fr; gap: 38px; padding-block: 72px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
   .footer-bottom { align-items: start; flex-direction: column; gap: 8px; }
+  .age-gate { padding: 28px 22px; }
 }

@@ -89,5 +89,26 @@
     </div>
     <div class="footer-bottom shell"><span>EG Imports</span></div>
   </footer>
+
+  <dialog class="age-gate" id="age-gate" aria-labelledby="age-gate-title" aria-describedby="age-gate-description">
+    <p class="eyebrow">Verificação de idade</p>
+    <h2 id="age-gate-title">Você tem 18 anos ou mais?</h2>
+    <p id="age-gate-description">A venda de bebidas alcoólicas é permitida somente para maiores de 18 anos.</p>
+    <div class="age-gate-actions">
+      <button class="age-gate-confirm" id="age-gate-confirm" type="button">Sim, tenho 18 anos ou mais</button>
+      <button class="age-gate-decline" id="age-gate-decline" type="button">Não, sou menor de 18 anos</button>
+    </div>
+  </dialog>
+
+  <script>
+    const ageGate = document.querySelector("#age-gate");
+
+    ageGate.showModal();
+    ageGate.addEventListener("cancel", (event) => event.preventDefault());
+    document.querySelector("#age-gate-confirm").addEventListener("click", () => ageGate.close());
+    document.querySelector("#age-gate-decline").addEventListener("click", () => {
+      window.location.replace("https://www.google.com/");
+    });
+  </script>
 </body>
 </html>
